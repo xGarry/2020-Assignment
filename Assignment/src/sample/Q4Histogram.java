@@ -109,17 +109,21 @@ public class Q4Histogram extends Application
    	}
    	public void action(){
    		int ascii=65; // reintilize the ascii value
+   		int asciiLower=97;
    		try{
-      		while (ascii <=90){
+      		while (ascii <=90 && asciiLower <=122 ){
+      			char l = (char)asciiLower;
         		char c = (char)ascii;
         		FileInputStream fis = new FileInputStream(fileinput.getText()); // read in the file as fis
         		while (fis.available() > 0) {
           			current = (char) fis.read(); // reading in character by character
-          			if (current == c){ // if the character from ascii and the file are same
-            			number =number+1; // increment the number
+          			if (current == c || current == l){ // if the character from ascii and the file are same(lowercase and uppercase )
+            				number = number+1; // increment the number
           			}
+          			
           		dataSeries1.getData().add(new XYChart.Data<String, Number>(String.valueOf(c), number)); // add the data 
         		}
+        	asciiLower++;
         	ascii ++;
         	number =0;
       		}
