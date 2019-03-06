@@ -57,40 +57,52 @@ public class Q3Circle extends Application {
         
         //Keep points on circle while they are dragged, and update their positions and angles
         circle[0].setOnMouseDragged((MouseEvent me) -> {
+            Point2D redCenter = new Point2D(c.getCenterX(), c.getCenterY());
+            Point2D mouse = new Point2D(me.getX(), me.getY());
+            Point2D centerToMouse = mouse.subtract(redCenter);
+            Point2D centerToNewPoint = centerToMouse.normalize().multiply(c.getRadius());
+            Point2D newPoint = centerToNewPoint.add(redCenter);
+            circle[0].setCenterX(newPoint.getX());
+            circle[0].setCenterY(newPoint.getY());
+
             if (circle[0].contains(me.getX(), me.getY())) {
-                Point2D redCenter = new Point2D(c.getCenterX(), c.getCenterY());
-                Point2D mouse = new Point2D(me.getX(), me.getY());
-                Point2D centerToMouse = mouse.subtract(redCenter);
-                Point2D centerToNewPoint = centerToMouse.normalize().multiply(c.getRadius());
-                Point2D newPoint = centerToNewPoint.add(redCenter);
-                circle[0].setCenterX(newPoint.getX());
-                circle[0].setCenterY(newPoint.getY());
+                // Recompute and display angles
+                circle[0].setCenterX(me.getX());
+                circle[0].setCenterY(me.getY());
                 updateLines();
             }
         });
 
         circle[1].setOnMouseDragged((MouseEvent me) -> {
+            Point2D redCenter = new Point2D(c.getCenterX(), c.getCenterY());
+            Point2D mouse = new Point2D(me.getX(), me.getY());
+            Point2D centerToMouse = mouse.subtract(redCenter);
+            Point2D centerToNewPoint = centerToMouse.normalize().multiply(c.getRadius());
+            Point2D newPoint = centerToNewPoint.add(redCenter);
+            circle[1].setCenterX(newPoint.getX());
+            circle[1].setCenterY(newPoint.getY());
+
             if (circle[1].contains(me.getX(), me.getY())) {
-                Point2D redCenter = new Point2D(c.getCenterX(), c.getCenterY());
-                Point2D mouse = new Point2D(me.getX(), me.getY());
-                Point2D centerToMouse = mouse.subtract(redCenter);
-                Point2D centerToNewPoint = centerToMouse.normalize().multiply(c.getRadius());
-                Point2D newPoint = centerToNewPoint.add(redCenter);
-                circle[1].setCenterX(newPoint.getX());
-                circle[1].setCenterY(newPoint.getY());
+                // Recompute and display angles
+                circle[1].setCenterX(me.getX());
+                circle[1].setCenterY(me.getY());
                 updateLines();
             }
         });
 
         circle[2].setOnMouseDragged((MouseEvent me) -> {
+            Point2D redCenter = new Point2D(c.getCenterX(), c.getCenterY());
+            Point2D mouse = new Point2D(me.getX(), me.getY());
+            Point2D centerToMouse = mouse.subtract(redCenter);
+            Point2D centerToNewPoint = centerToMouse.normalize().multiply(c.getRadius());
+            Point2D newPoint = centerToNewPoint.add(redCenter);
+            circle[2].setCenterX(newPoint.getX());
+            circle[2].setCenterY(newPoint.getY());
+
             if (circle[2].contains(me.getX(), me.getY())) {
-                Point2D redCenter = new Point2D(c.getCenterX(), c.getCenterY());
-                Point2D mouse = new Point2D(me.getX(), me.getY());
-                Point2D centerToMouse = mouse.subtract(redCenter);
-                Point2D centerToNewPoint = centerToMouse.normalize().multiply(c.getRadius());
-                Point2D newPoint = centerToNewPoint.add(redCenter);
-                circle[2].setCenterX(newPoint.getX());
-                circle[2].setCenterY(newPoint.getY());
+                // Recompute and display angles
+                circle[2].setCenterX(me.getX());
+                circle[2].setCenterY(me.getY());
                 updateLines();
             }
         });
