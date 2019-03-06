@@ -1,3 +1,5 @@
+package sample;
+
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,7 +11,7 @@ import java.util.Random;
 public class Q1Cards extends Application {
   
   public HBox pane = new HBox();
-  String source = "file:/home/hanan/Desktop/Assignment1- CSCI2020U/Cards/"; // destination to the images
+  String source = "file:///C:/Users/Garry/Documents/Assignment1/Cards/"; // destination to the images
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
     
